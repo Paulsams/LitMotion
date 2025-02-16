@@ -56,7 +56,6 @@ namespace LitMotion.Extensions
         {
             if (textToAnimator.TryGetValue(text, out var animator))
             {
-                animator.Reset();
                 animator.refCount++;
                 return animator;
             }
