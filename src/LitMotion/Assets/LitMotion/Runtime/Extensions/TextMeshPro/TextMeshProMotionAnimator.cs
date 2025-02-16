@@ -17,7 +17,7 @@ namespace LitMotion.Extensions
     /// <summary>
     /// Wrapper class for animating individual characters in TextMeshPro.
     /// </summary>
-    internal sealed class TextMeshProMotionAnimator
+    public sealed class TextMeshProMotionAnimator
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         static void Init()
@@ -43,7 +43,7 @@ namespace LitMotion.Extensions
         static bool initialized;
         static TextMeshProMotionAnimator rootNode;
 
-        internal static TextMeshProMotionAnimator Get(TMP_Text text)
+        public static TextMeshProMotionAnimator Get(TMP_Text text)
         {
             if (textToAnimator.TryGetValue(text, out var animator))
             {
@@ -73,7 +73,7 @@ namespace LitMotion.Extensions
             return animator;
         }
 
-        internal static void Return(TextMeshProMotionAnimator animator)
+        static void Return(TextMeshProMotionAnimator animator)
         {
             animator.nextNode = rootNode;
             rootNode = animator;
@@ -159,7 +159,7 @@ namespace LitMotion.Extensions
             public Color color;
         }
 
-        public TextMeshProMotionAnimator()
+        TextMeshProMotionAnimator()
         {
             charInfoArray = new CharInfo[32];
             for (int i = 0; i < charInfoArray.Length; i++)
