@@ -202,6 +202,7 @@ namespace LitMotion
             where TAdapter : unmanaged, IMotionAdapter<TValue, StringOptions>
         {
             var options = builder.buffer.Options;
+            options.ScrambleMode = ScrambleMode.Custom;
             options.CustomScrambleChars = customScrambleChars;
             builder.buffer.Options = options;
             return builder;
