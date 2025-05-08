@@ -175,7 +175,7 @@ namespace LitMotion.Extensions
                 charInfoArray[i].Position = Vector3.zero;
             }
 
-            updateAction = UpdateCore;
+            updateAction = SetDirty;
             completeAction = CompleteCore;
         }
 
@@ -231,7 +231,7 @@ namespace LitMotion.Extensions
                 charInfoArray[i].Position = Vector3.zero;
             }
 
-            isDirty = false;
+            SetDirty();
         }
 
 
