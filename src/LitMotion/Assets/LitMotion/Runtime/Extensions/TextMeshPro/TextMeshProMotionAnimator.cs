@@ -170,7 +170,7 @@ namespace LitMotion.Extensions
                 charInfoArray[i].position = Vector3.zero;
             }
 
-            updateAction = UpdateCore;
+            updateAction = SetDirty;
         }
 
         TMP_Text target;
@@ -223,7 +223,7 @@ namespace LitMotion.Extensions
                 charInfoArray[i].position = Vector3.zero;
             }
 
-            isDirty = false;
+            SetDirty();
         }
 
 
@@ -242,6 +242,7 @@ namespace LitMotion.Extensions
 
         void UpdateCore()
         {
+            isDirty = false;
             target.ForceMeshUpdate();
 
             var textInfo = target.textInfo;
