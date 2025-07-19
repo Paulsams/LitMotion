@@ -182,7 +182,7 @@ namespace LitMotion.Extensions
         TMP_Text target;
         internal readonly Action updateAction;
         internal readonly Action completeAction;
-        internal TMPMotionCharacter[] charInfoArray;
+        public TMPMotionCharacter[] charInfoArray;
         bool isDirty;
         int refCount;
 
