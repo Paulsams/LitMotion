@@ -151,7 +151,7 @@ namespace LitMotion.Extensions
         }
 #endif
 
-        internal struct CharInfo
+        public struct CharInfo
         {
             public Vector3 position;
             public Vector3 scale;
@@ -175,7 +175,7 @@ namespace LitMotion.Extensions
 
         TMP_Text target;
         internal readonly Action updateAction;
-        internal CharInfo[] charInfoArray;
+        public CharInfo[] charInfoArray;
         bool isDirty;
 
         TextMeshProMotionAnimator nextNode;
